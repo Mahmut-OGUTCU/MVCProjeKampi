@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.ImageFile
+@{
+    ViewBag.Title = "GalleryAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Görsel Ekle</h2>
+
+@using (Html.BeginForm("GalleryAdd", "Gallery", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Görsel Adı:")
+        @Html.TextBoxFor(x => x.ImageName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Görsel Yolu:")
+        @Html.TextAreaFor(x => x.ImagePath, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </div>
+}

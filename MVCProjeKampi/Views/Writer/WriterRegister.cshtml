@@ -1,0 +1,84 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    Layout = null;
+}
+
+@{
+    string hata = "Bu mail kullanılmaktadır.";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>MVC Proje Kampı</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="~/AdminLTE-3.0.4/login-form-20/https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/login-form-20/https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/login-form-20/css/style.css">
+
+
+
+</head>
+<body class="img js-fullheight" style="background-image: url(/AdminLTE-3.0.4/login-form-20/images/bg.jpg);">
+    <section class="ftco-section">
+        <div class="container" style="margin-top: -45px;">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">MVC Proje Kampı Yazar Kayıt</h2>
+
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        @using (Html.BeginForm("WriterRegister", "Writer", FormMethod.Post))
+                        {
+                            @Html.Label("Ad")
+                            @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterName, "", new { @class = "text-danger text-bold" })
+                            <br />
+                            @Html.Label("Soyad")
+                            @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterSurname, "", new { @class = "text-danger text-bold" })
+                            <br />
+                            @Html.Label("E-Posta Adresi")
+                            @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+                            <div class="text-danger text-bold">
+                                @if (ViewBag.str != "str")
+                                {
+                                    @hata
+                                }
+                            </div>
+                            <br />
+                            @Html.Label("Şifre")
+                            @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterPassword, "", new { @class = "text-danger text-bold" })
+                            <br />
+                            @Html.Label("Hakkında")
+                            @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterAbout, "", new { @class = "text-danger text-bold" })
+                            <br />
+                            @Html.Label("Kullanıcı Adı")
+                            @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterTitle, "", new { @class = "text-danger text-bold" })
+                            <br />
+                            <button class="btn btn-success">Kayıt Ol</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/jquery.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/popper.js"></script>
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/bootstrap.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/main.js"></script>
+
+</body>
+</html>
+

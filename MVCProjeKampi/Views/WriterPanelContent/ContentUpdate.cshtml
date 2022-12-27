@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    ViewBag.Title = "ContentUpdate";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2>İçerik Güncelle</h2>
+<br />
+@using (Html.BeginForm("ContentUpdate", "WriterPanelContent", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.ContentID)
+        @Html.HiddenFor(x => x.HeadingID)
+        @Html.HiddenFor(x => x.WriterID)
+        @Html.HiddenFor(x => x.ContentCreatedDate)
+        @Html.HiddenFor(x => x.ContentCreatedID)
+        @Html.Label("İçerik")
+        @Html.TextAreaFor(x => x.ContentValue, 10, 30, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ContentValue, "", new { @class = "text-danger text-bold" })
+        <br />
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

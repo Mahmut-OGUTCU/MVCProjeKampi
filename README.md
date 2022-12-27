@@ -1,6 +1,6 @@
 # MVCProjeKampi
 
-##Proje İçeriği
+## Proje İçeriği
 
 Proje bir sözlük sitesidir. Anasayfada sizi bir vitrin karşılamaktadır. Bu sayede proje içeriğine ufaktan değinilmiş olur. Ardından Kayıt ol bölümünden yazar kayıdı oluşturup /Login/WriterLogin 'den (Giriş yap) giriş yapılabiliriz. 
 Admin panelinden eklenen kategoriler sayesinde başlık oluşturabilir, bu başlığa da herkes tarafından içerik eklemesi yapılmasına olanak veririz. Bir nevi ekşi sözlük klonu gibidir.

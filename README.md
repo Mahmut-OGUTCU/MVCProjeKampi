@@ -1,6 +1,6 @@
 # MVCProjeKampi
 
-[mahmutogutcu.bsite.net](https://mahmutogutcu.bsite.net)
+Projenin canlıya alınmış linki: [mahmutogutcu.bsite.net](https://mahmutogutcu.bsite.net)
 
 ## Proje İçeriği
 

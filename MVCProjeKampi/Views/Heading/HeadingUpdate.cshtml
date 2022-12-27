@@ -3,22 +3,56 @@
     ViewBag.Title = "HeadingUpdate";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Başlıklar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+</head>
+<body>
+    <div class="card card-solid" style="border-radius:10px">
+        <div>
+            <section class="content-header bg-primary" style="border-radius:10px">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h1>Başlık Güncelleme</h1>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
 
-<h2>Başlık Güncelleme</h2>
-@using (Html.BeginForm("HeadingUpdate", "Heading", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.HiddenFor(x => x.HeadingID, new { @class = "form-control" })
-        @Html.HiddenFor(x => x.HeadingCreatedDate, new { @class = "form-control" })
-        @Html.HiddenFor(x => x.HeadingCreatedID, new { @class = "form-control" })
-        @Html.HiddenFor(x => x.WriterID, new { @class = "form-control" })
-        <br />
-        @Html.Label("Başlık Adı")
-        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
-        <br />
-        @Html.Label("Kategori")
-        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-success">Güncelle</button>
+            <div class="card-body pb-0">
+                <div class="row">
+                    <div class="col-md-7">
+                        @using (Html.BeginForm("HeadingUpdate", "Heading", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                @Html.HiddenFor(x => x.HeadingID, new { @class = "form-control" })
+                                @Html.HiddenFor(x => x.HeadingCreatedDate, new { @class = "form-control" })
+                                @Html.HiddenFor(x => x.HeadingCreatedID, new { @class = "form-control" })
+                                @Html.HiddenFor(x => x.WriterID, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Başlık Adı")
+                                @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Kategori")
+                                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+                                <br />
+                                <button class="btn btn-success">Güncelle</button>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-5 justify-content-center align-self-center">
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-}
+</body>
+</html>

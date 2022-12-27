@@ -6,6 +6,7 @@ using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -58,6 +59,15 @@ namespace MVCProjeKampi.Controllers
                 p.WriterisActive = true;
                 p.WriterCreatedID = adminValue.AdminID;
 
+                if (Request.Files.Count > 0)
+                {
+                    string fileName = Path.GetFileName(Request.Files[0].FileName);
+                    string type = Path.GetExtension(Request.Files[0].FileName);
+                    string path = "~/AdminLTE-3.0.4/writer-image/" + fileName + type;
+                    Request.Files[0].SaveAs(Server.MapPath(path));
+                    p.WriterImage = "/AdminLTE-3.0.4/writer-image/" + fileName + type;
+                }
+
                 if (p.WriterImage == null)
                 {
                     p.WriterImage = "https://c7.alamy.com/comp/MFWFPP/nobody-knows-retro-clipart-illustration-MFWFPP.jpg";
@@ -105,6 +115,15 @@ namespace MVCProjeKampi.Controllers
                 p.WriterUpdatedDate = DateTime.Now;
                 p.WriterUpdatedID = adminValue.AdminID;
                 p.WriterisActive = true;
+
+                if (Request.Files.Count > 0)
+                {
+                    string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                    string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                    string yol = "~/AdminLTE-3.0.4/writer-image/" + dosyaadi + uzanti;
+                    Request.Files[0].SaveAs(Server.MapPath(yol));
+                    p.WriterImage = "/AdminLTE-3.0.4/writer-image/" + dosyaadi + uzanti;
+                }
 
                 if (p.WriterImage == null)
                 {

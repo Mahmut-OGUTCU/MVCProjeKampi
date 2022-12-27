@@ -4,23 +4,56 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Kategori Güncelle</h1>
 <br />
-<div class="container">
-    @using (Html.BeginForm("CategoryUpdate", "AdminCategory", FormMethod.Post))
-    {
-        <div class="form-group">
-            @Html.HiddenFor(x => x.CategoryID, new { @class = "form-control" })
-            @Html.HiddenFor(x => x.CategoryCreatedDate, new { @class = "form-control" })
-            @Html.HiddenFor(x => x.CategoryCreatedID, new { @class = "form-control" })
-            <br />
-            @Html.Label("Kategori Adı:")
-            @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
-            <br />
-            @Html.Label("Açıklama:")
-            @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
-            <br />
-            <button class="btn btn-primary">Güncelle</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kategoriler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
+</head>
+<body>
+    <div class="card card-solid" style="border-radius:10px">
+        <div>
+            <section class="content-header bg-primary" style="border-radius:10px">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h1>Kategori Güncelleme</h1>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <div class="card-body pb-0">
+                <div class="row">
+                    <div class="col-md-7">
+                        @using (Html.BeginForm("CategoryUpdate", "AdminCategory", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                @Html.HiddenFor(x => x.CategoryID, new { @class = "form-control" })
+                                @Html.HiddenFor(x => x.CategoryCreatedDate, new { @class = "form-control" })
+                                @Html.HiddenFor(x => x.CategoryCreatedID, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Kategori Adı:")
+                                @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Açıklama:")
+                                @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
+                                <br />
+                                <button class="btn btn-primary">Güncelle</button>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-5 justify-content-center align-self-center">
+                        <p>
+                            Seçilen <b>@Model.CategoryName</b> kategorisi için bir düzenleme yapmaktasınız.<br />
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
-</div>
+    </div>
+</body>
+</html>

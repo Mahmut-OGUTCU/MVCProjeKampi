@@ -2644,6 +2644,7 @@
     <Content Include="Views\Chart\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AdminLTE-3.0.4\writer-image\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\Alert\" />
   </ItemGroup>

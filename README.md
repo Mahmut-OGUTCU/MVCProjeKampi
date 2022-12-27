@@ -1,6 +1,6 @@
 # MVCProjeKampi
 
-[mahmutogutcu.bsite.net](url)
+[[mahmutogutcu.bsite.net](https://mahmutogutcu.bsite.net)](url)
 
 ## Proje İçeriği
 

@@ -1,5 +1,7 @@
 # MVCProjeKampi
 
+[mahmutogutcu.bsite.net](url)
+
 ## Proje İçeriği
 
 Proje bir sözlük sitesidir. Anasayfada sizi bir vitrin karşılamaktadır. Bu sayede proje içeriğine ufaktan değinilmiş olur. Ardından Kayıt ol bölümünden yazar kayıdı oluşturup /Login/WriterLogin 'den (Giriş yap) giriş yapılabiliriz. 
